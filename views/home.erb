@@ -1,4 +1,4 @@
-<% if !session[:iser_id] %>
+<% if !session[:user_id] %>
 <a href="/new" style="text-decoration: none;"><div style="width: 50%;
                         height: 10%;
                         background-color: blue;
@@ -19,4 +19,13 @@
   <button>Log In</button><br>
 </form>
 <% else %>
+  <a href="log_out" style="text-decoration: none;"><div style="width: 50%;
+    height: 10%;
+    background-color: blue;
+    color: white;
+    margin: 0 auto;
+    text-align: center;
+    font-family: Helvetica,sans-serif;
+    padding: 10px;
+    font-size: 150%;">Log Out</div></a>
 <% end %>

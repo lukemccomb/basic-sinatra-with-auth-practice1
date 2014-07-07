@@ -36,4 +36,9 @@ class App < Sinatra::Application
     flash[:notice] = "Welcome, #{user_info[:username]}."
     redirect "/"
   end
+
+  get "/log_out" do
+    session.delete(:user_id)
+    redirect "/"
+  end
 end
