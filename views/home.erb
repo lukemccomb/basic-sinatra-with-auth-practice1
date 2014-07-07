@@ -1,3 +1,4 @@
+<% if !session[:iser_id] %>
 <a href="/new" style="text-decoration: none;"><div style="width: 50%;
                         height: 10%;
                         background-color: blue;
@@ -7,3 +8,15 @@
                         font-family: Helvetica,sans-serif;
                         padding: 10px;
                         font-size: 150%;">Register</div></a>
+<form method="POST" action="/log_in" style="width: 50%;
+  font-family: Helvetica, sans-serif;
+  font-size: 125%;
+  margin: 0 auto;">
+  <label for="username">Username:</label><br>
+  <input name="username" id="username" style="width: 50%;"><br>
+  <label for="password">Password:</label><br>
+  <input name="password" id="password" style="width: 50%;"><br>
+  <button>Log In</button><br>
+</form>
+<% else %>
+<% end %>

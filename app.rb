@@ -26,4 +26,14 @@ class App < Sinatra::Application
     flash[:notice] = "Thank you for registering."
     redirect "/"
   end
+
+  post "/log_in" do
+    #grab username & password
+    hash = {username: params[:username], password: params[:password]}
+    #iterate through user database and return value of matching hash which contains the user id which user does not enter and is only in DB
+    user_info = @user_database.all.detect { |user_hash| user_hash[:username] == hash[:username] && user_hash[:password] == hash[:password]}
+    session[:user_id] = user_info[:id]
+    flash[:notice] = "Welcome, #{user_info[:username]}."
+    redirect "/"
+  end
 end
